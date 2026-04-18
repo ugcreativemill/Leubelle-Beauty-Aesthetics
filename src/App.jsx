@@ -386,8 +386,8 @@ function HomePage() {
           <FloatingPhoto
             src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80"
             alt=""
-            className="left-[-2rem] top-[10rem] hidden h-52 w-40 md:block lg:h-64 lg:w-48"
-            imageClassName="opacity-70"
+            className="left-[-1.75rem] top-[7.75rem] h-28 w-20 sm:left-[-1rem] sm:top-[8.5rem] sm:h-40 sm:w-28 md:top-[10rem] md:h-52 md:w-40 lg:left-[-2rem] lg:h-64 lg:w-48"
+            imageClassName="opacity-40 sm:opacity-50 md:opacity-70"
             duration={13}
             delay={0.25}
             rotate={-8}
@@ -395,8 +395,8 @@ function HomePage() {
           <FloatingPhoto
             src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=80"
             alt=""
-            className="bottom-14 left-[3%] hidden h-40 w-32 md:block lg:h-48 lg:w-36"
-            imageClassName="opacity-65"
+            className="bottom-28 left-[-0.75rem] h-24 w-16 sm:bottom-20 sm:left-[2%] sm:h-32 sm:w-24 md:bottom-14 md:h-40 md:w-32 lg:h-48 lg:w-36"
+            imageClassName="opacity-35 sm:opacity-45 md:opacity-65"
             duration={11}
             delay={0.6}
             rotate={6}
@@ -404,8 +404,8 @@ function HomePage() {
           <FloatingPhoto
             src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=900&q=80"
             alt=""
-            className="right-[5%] top-28 hidden h-48 w-36 lg:block"
-            imageClassName="opacity-65"
+            className="right-[-0.9rem] top-[5.5rem] h-24 w-20 sm:right-[2%] sm:top-24 sm:h-32 sm:w-24 lg:right-[5%] lg:top-28 lg:h-48 lg:w-36"
+            imageClassName="opacity-35 sm:opacity-45 lg:opacity-65"
             duration={14}
             delay={0.15}
             rotate={7}
@@ -645,8 +645,8 @@ function HomePage() {
             <FloatingPhoto
               src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=900&q=80"
               alt=""
-              className="right-[-1.5rem] top-12 hidden h-52 w-40 lg:block"
-              imageClassName="opacity-55"
+              className="right-[-0.75rem] top-24 h-24 w-20 sm:right-[1%] sm:top-16 sm:h-32 sm:w-24 lg:right-[-1.5rem] lg:top-12 lg:h-52 lg:w-40"
+              imageClassName="opacity-30 sm:opacity-45 lg:opacity-55"
               duration={15}
               delay={0.4}
               rotate={8}
@@ -654,8 +654,8 @@ function HomePage() {
             <FloatingPhoto
               src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=80"
               alt=""
-              className="bottom-6 left-[-1rem] hidden h-44 w-32 lg:block"
-              imageClassName="opacity-55"
+              className="bottom-8 left-[-0.75rem] h-24 w-20 sm:left-[1%] sm:h-32 sm:w-24 lg:bottom-6 lg:left-[-1rem] lg:h-44 lg:w-32"
+              imageClassName="opacity-30 sm:opacity-45 lg:opacity-55"
               duration={12}
               delay={0.8}
               rotate={-7}
