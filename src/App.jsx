@@ -18,6 +18,64 @@ import { featuredTreatments, services, servicesBySlug } from './data/services';
 
 const BOOKSY_URL = 'https://leubelle.booksy.com/a/';
 
+const floatingPhotos = [
+  {
+    src: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80',
+    className:
+      'left-[-1.4rem] top-[8rem] h-24 w-20 sm:left-[-0.8rem] sm:top-[8.5rem] sm:h-32 sm:w-24 md:left-[-1.4rem] md:top-[9.5rem] md:h-40 md:w-32 lg:left-[-2rem] lg:top-[10rem] lg:h-52 lg:w-40',
+    imageClassName: 'opacity-38 sm:opacity-48 md:opacity-58',
+    duration: 13,
+    delay: 0.15,
+    rotate: -8,
+    driftX: 10,
+    driftY: 16
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=80',
+    className:
+      'left-[4%] top-[17rem] h-24 w-20 sm:left-[6%] sm:top-[19rem] sm:h-32 sm:w-24 md:left-[4%] md:top-[22rem] md:h-40 md:w-32 lg:left-[6%] lg:top-[26rem] lg:h-52 lg:w-40',
+    imageClassName: 'opacity-34 sm:opacity-44 md:opacity-55',
+    duration: 11,
+    delay: 0.45,
+    rotate: 7,
+    driftX: 8,
+    driftY: 14
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=900&q=80',
+    className:
+      'right-[-1rem] top-[6rem] h-24 w-20 sm:right-[1%] sm:top-[7rem] sm:h-32 sm:w-24 md:right-[2%] md:top-[8rem] md:h-40 md:w-32 lg:right-[5%] lg:top-[8rem] lg:h-52 lg:w-40',
+    imageClassName: 'opacity-34 sm:opacity-44 md:opacity-55',
+    duration: 14,
+    delay: 0.2,
+    rotate: 8,
+    driftX: 12,
+    driftY: 18
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=900&q=80',
+    className:
+      'right-[2%] top-[18rem] h-24 w-20 sm:right-[5%] sm:top-[21rem] sm:h-32 sm:w-24 md:right-[3%] md:top-[24rem] md:h-40 md:w-32 lg:right-[10%] lg:top-[28rem] lg:h-52 lg:w-40',
+    imageClassName: 'opacity-32 sm:opacity-42 md:opacity-54',
+    duration: 12,
+    delay: 0.6,
+    rotate: -7,
+    driftX: 9,
+    driftY: 15
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=80',
+    className:
+      'left-[38%] top-[4.5rem] h-24 w-20 sm:left-[42%] sm:top-[4.5rem] sm:h-32 sm:w-24 md:left-[44%] md:top-[5.5rem] md:h-40 md:w-32 lg:left-[46%] lg:top-[6rem] lg:h-52 lg:w-40',
+    imageClassName: 'opacity-24 sm:opacity-30 md:opacity-42',
+    duration: 15,
+    delay: 0.3,
+    rotate: 5,
+    driftX: 7,
+    driftY: 12
+  }
+];
+
 const trustPoints = [
   'Personalized consultations guided by your skin goals',
   'Modern treatment techniques with a luxury touch',
@@ -97,7 +155,9 @@ function FloatingPhoto({
   imageClassName = '',
   duration = 12,
   delay = 0,
-  rotate = 0
+  rotate = 0,
+  driftX = 8,
+  driftY = 14
 }) {
   return (
     <motion.div
@@ -106,7 +166,8 @@ function FloatingPhoto({
       initial={{ opacity: 0, y: 20, rotate }}
       animate={{
         opacity: [0.16, 0.28, 0.16],
-        y: [0, -14, 0],
+        x: [0, driftX, 0],
+        y: [0, -driftY, 0],
         rotate: [rotate, rotate + 1.5, rotate]
       }}
       transition={{
@@ -383,33 +444,9 @@ function HomePage() {
             transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
           />
           <ArchShape className="absolute left-[8%] top-20 hidden h-[32rem] w-[18rem] opacity-50 lg:block" />
-          <FloatingPhoto
-            src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80"
-            alt=""
-            className="left-[-1.75rem] top-[7.75rem] h-28 w-20 sm:left-[-1rem] sm:top-[8.5rem] sm:h-40 sm:w-28 md:top-[10rem] md:h-52 md:w-40 lg:left-[-2rem] lg:h-64 lg:w-48"
-            imageClassName="opacity-40 sm:opacity-50 md:opacity-70"
-            duration={13}
-            delay={0.25}
-            rotate={-8}
-          />
-          <FloatingPhoto
-            src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=80"
-            alt=""
-            className="bottom-28 left-[-0.75rem] h-24 w-16 sm:bottom-20 sm:left-[2%] sm:h-32 sm:w-24 md:bottom-14 md:h-40 md:w-32 lg:h-48 lg:w-36"
-            imageClassName="opacity-35 sm:opacity-45 md:opacity-65"
-            duration={11}
-            delay={0.6}
-            rotate={6}
-          />
-          <FloatingPhoto
-            src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=900&q=80"
-            alt=""
-            className="right-[-0.9rem] top-[5.5rem] h-24 w-20 sm:right-[2%] sm:top-24 sm:h-32 sm:w-24 lg:right-[5%] lg:top-28 lg:h-48 lg:w-36"
-            imageClassName="opacity-35 sm:opacity-45 lg:opacity-65"
-            duration={14}
-            delay={0.15}
-            rotate={7}
-          />
+          {floatingPhotos.map((photo) => (
+            <FloatingPhoto key={photo.src + photo.className} alt="" {...photo} />
+          ))}
           <div className="absolute right-0 top-16 hidden h-[32rem] w-[20rem] lg:block">
             <DecorativeLine />
           </div>
@@ -642,24 +679,6 @@ function HomePage() {
 
         <section id="services" className="bg-white/70 py-24">
           <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-            <FloatingPhoto
-              src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=900&q=80"
-              alt=""
-              className="right-[-0.75rem] top-24 h-24 w-20 sm:right-[1%] sm:top-16 sm:h-32 sm:w-24 lg:right-[-1.5rem] lg:top-12 lg:h-52 lg:w-40"
-              imageClassName="opacity-30 sm:opacity-45 lg:opacity-55"
-              duration={15}
-              delay={0.4}
-              rotate={8}
-            />
-            <FloatingPhoto
-              src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=80"
-              alt=""
-              className="bottom-8 left-[-0.75rem] h-24 w-20 sm:left-[1%] sm:h-32 sm:w-24 lg:bottom-6 lg:left-[-1rem] lg:h-44 lg:w-32"
-              imageClassName="opacity-30 sm:opacity-45 lg:opacity-55"
-              duration={12}
-              delay={0.8}
-              rotate={-7}
-            />
             <SectionHeading
               eyebrow="Our Services"
               title="A Real Treatment Menu Designed Around Leubelle Care"
