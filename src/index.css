@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=WindSong:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #221a17;
+  background: #fbf6f0;
+  font-family: 'Manrope', sans-serif;
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.7), transparent 30%),
+    linear-gradient(180deg, #fdfaf6 0%, #fbf6f0 30%, #fffdf9 100%);
+  color: #221a17;
+}
+
+body.preloading {
+  overflow: hidden;
+}
+
+#root {
+  isolation: isolate;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+iframe {
+  display: block;
+}
+
+::selection {
+  background: rgba(159, 111, 82, 0.2);
+  color: #221a17;
+}
