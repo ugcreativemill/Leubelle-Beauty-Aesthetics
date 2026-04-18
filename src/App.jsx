@@ -16,7 +16,8 @@ import { Navbar } from './components/Navbar';
 import { SectionHeading } from './components/SectionHeading';
 import { featuredTreatments, services, servicesBySlug } from './data/services';
 
-const BOOKSY_URL = 'https://leubelle.booksy.com/a/';
+const BOOKSY_URL =
+  'https://booksy.com/en-za/43159_leubelle-beauty-aesthetics_skin-care_54464_strathavon?do=invite&_branch_match_id=1573995465181752854&utm_medium=profile_share_from_profile&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXT07J0UvKz88urtRLzs%2FVD%2FAoskwM8iwzMUiyrytKTUstKsrMS49PKsovL04tsnXLBIrlVwAAN98KkT0AAAA%3D';
 
 const floatingPhotos = [
   {

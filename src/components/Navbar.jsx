@@ -58,7 +58,7 @@ export function Navbar() {
             </a>
           ))}
           <a
-            href="https://leubelle.booksy.com/a/"
+            href="https://booksy.com/en-za/43159_leubelle-beauty-aesthetics_skin-care_54464_strathavon?do=invite&_branch_match_id=1573995465181752854&utm_medium=profile_share_from_profile&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXT07J0UvKz88urtRLzs%2FVD%2FAoskwM8iwzMUiyrytKTUstKsrMS49PKsovL04tsnXLBIrlVwAAN98KkT0AAAA%3D"
             className="rounded-full bg-mocha px-6 py-3 text-sm font-semibold text-white transition hover:bg-bronze"
           >
             Book On Booksy
@@ -89,7 +89,7 @@ export function Navbar() {
               </a>
             ))}
             <a
-              href="https://leubelle.booksy.com/a/"
+              href="https://booksy.com/en-za/43159_leubelle-beauty-aesthetics_skin-care_54464_strathavon?do=invite&_branch_match_id=1573995465181752854&utm_medium=profile_share_from_profile&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXT07J0UvKz88urtRLzs%2FVD%2FAoskwM8iwzMUiyrytKTUstKsrMS49PKsovL04tsnXLBIrlVwAAN98KkT0AAAA%3D"
               className="rounded-full bg-mocha px-6 py-3 text-center text-sm font-semibold text-white"
               onClick={() => setOpen(false)}
             >
