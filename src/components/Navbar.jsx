@@ -52,7 +52,7 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-ink/70 transition hover:text-mocha"
+              className="text-sm font-semibold text-ink/78 transition hover:text-mocha"
             >
               {link.label}
             </a>
@@ -82,7 +82,7 @@ export function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-ink/75"
+                className="text-sm font-semibold text-ink/80"
                 onClick={() => setOpen(false)}
               >
                 {link.label}
