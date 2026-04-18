@@ -90,6 +90,42 @@ function ArchShape({ className = '' }) {
   );
 }
 
+function FloatingPhoto({
+  src,
+  alt,
+  className = '',
+  imageClassName = '',
+  duration = 12,
+  delay = 0,
+  rotate = 0
+}) {
+  return (
+    <motion.div
+      aria-hidden="true"
+      className={`pointer-events-none absolute overflow-hidden rounded-[2rem] border border-white/40 bg-white/35 shadow-luxe backdrop-blur-xl ${className}`}
+      initial={{ opacity: 0, y: 20, rotate }}
+      animate={{
+        opacity: [0.16, 0.28, 0.16],
+        y: [0, -14, 0],
+        rotate: [rotate, rotate + 1.5, rotate]
+      }}
+      transition={{
+        duration,
+        delay,
+        repeat: Infinity,
+        ease: 'easeInOut'
+      }}
+    >
+      <img
+        src={src}
+        alt={alt}
+        className={`h-full w-full object-cover saturate-[0.85] ${imageClassName}`}
+      />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(251,246,240,0.18),rgba(251,246,240,0.5))]" />
+    </motion.div>
+  );
+}
+
 function WhatsAppIcon({ className = '' }) {
   return (
     <svg
@@ -347,6 +383,33 @@ function HomePage() {
             transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
           />
           <ArchShape className="absolute left-[8%] top-20 hidden h-[32rem] w-[18rem] opacity-50 lg:block" />
+          <FloatingPhoto
+            src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80"
+            alt=""
+            className="left-[-2rem] top-[10rem] hidden h-52 w-40 md:block lg:h-64 lg:w-48"
+            imageClassName="opacity-70"
+            duration={13}
+            delay={0.25}
+            rotate={-8}
+          />
+          <FloatingPhoto
+            src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=80"
+            alt=""
+            className="bottom-14 left-[3%] hidden h-40 w-32 md:block lg:h-48 lg:w-36"
+            imageClassName="opacity-65"
+            duration={11}
+            delay={0.6}
+            rotate={6}
+          />
+          <FloatingPhoto
+            src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=900&q=80"
+            alt=""
+            className="right-[5%] top-28 hidden h-48 w-36 lg:block"
+            imageClassName="opacity-65"
+            duration={14}
+            delay={0.15}
+            rotate={7}
+          />
           <div className="absolute right-0 top-16 hidden h-[32rem] w-[20rem] lg:block">
             <DecorativeLine />
           </div>
@@ -578,7 +641,25 @@ function HomePage() {
         </section>
 
         <section id="services" className="bg-white/70 py-24">
-          <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+          <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+            <FloatingPhoto
+              src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=900&q=80"
+              alt=""
+              className="right-[-1.5rem] top-12 hidden h-52 w-40 lg:block"
+              imageClassName="opacity-55"
+              duration={15}
+              delay={0.4}
+              rotate={8}
+            />
+            <FloatingPhoto
+              src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=80"
+              alt=""
+              className="bottom-6 left-[-1rem] hidden h-44 w-32 lg:block"
+              imageClassName="opacity-55"
+              duration={12}
+              delay={0.8}
+              rotate={-7}
+            />
             <SectionHeading
               eyebrow="Our Services"
               title="A Real Treatment Menu Designed Around Leubelle Care"
