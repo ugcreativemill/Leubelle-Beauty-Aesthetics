@@ -397,6 +397,70 @@ function FloatingActions() {
   );
 }
 
+function PricePreview({ service }) {
+  if (!service.priceItems?.length) {
+    return null;
+  }
+
+  return (
+    <div className="mt-6 rounded-[1.4rem] border border-bronze/10 bg-white/78 p-4 shadow-soft">
+      <div className="flex items-center justify-between gap-3">
+        <p className="text-[0.64rem] font-semibold uppercase tracking-[0.3em] text-bronze/75">
+          Price Guide
+        </p>
+        <p className="rounded-full bg-sand px-3 py-1 font-serif text-lg font-semibold leading-none text-mocha">
+          From {service.startingPrice}
+        </p>
+      </div>
+      <div className="mt-4 space-y-2">
+        {service.priceItems.slice(0, 2).map((item) => (
+          <div key={`${service.slug}-${item.label}`} className="flex items-start justify-between gap-3">
+            <span className="text-xs leading-5 text-ink/58">{item.label}</span>
+            <span className="shrink-0 text-xs font-semibold text-mocha">{item.price}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function PriceMenu({ service }) {
+  if (!service.priceItems?.length) {
+    return null;
+  }
+
+  return (
+    <div className="relative mt-8 overflow-hidden rounded-[2.1rem] border border-bronze/10 bg-gradient-to-br from-ivory via-white to-sand/80 p-6 shadow-soft">
+      <div className="absolute right-[-3rem] top-[-3rem] h-32 w-32 rounded-full border border-bronze/10" />
+      <div className="relative z-10 flex flex-col gap-3 border-b border-mocha/10 pb-5 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-bronze/80">
+            Price List
+          </p>
+          <h3 className="mt-2 font-serif text-4xl leading-none text-mocha">Treatment Pricing</h3>
+        </div>
+        <p className="w-fit rounded-full bg-mocha px-4 py-2 font-serif text-xl font-semibold text-white shadow-soft">
+          From {service.startingPrice}
+        </p>
+      </div>
+      <div className="relative z-10 mt-5 grid gap-3">
+        {service.priceItems.map((item) => (
+          <div
+            key={`${service.slug}-${item.label}`}
+            className="grid gap-2 rounded-[1.25rem] border border-white/70 bg-white/82 p-4 shadow-soft sm:grid-cols-[1fr_auto] sm:items-center"
+          >
+            <p className="text-sm font-semibold leading-6 text-ink/74">{item.label}</p>
+            <p className="font-serif text-2xl font-semibold leading-none text-mocha">{item.price}</p>
+          </div>
+        ))}
+      </div>
+      <p className="relative z-10 mt-5 text-xs leading-6 text-ink/50">
+        Rand prices may be confirmed during consultation. Consultation items are quoted after skin assessment.
+      </p>
+    </div>
+  );
+}
+
 function ServiceCard({ service, index }) {
   return (
     <motion.article
@@ -405,7 +469,7 @@ function ServiceCard({ service, index }) {
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.55, delay: index * 0.04 }}
       whileHover={{ y: -6 }}
-      className="group rounded-[2rem] border border-mocha/8 bg-ivory p-7 shadow-soft transition hover:shadow-luxe"
+      className="group flex h-full flex-col rounded-[2rem] border border-mocha/8 bg-ivory p-7 shadow-soft transition hover:shadow-luxe"
     >
       <div className="flex items-center justify-between gap-4">
         <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-sand text-bronze">
@@ -417,9 +481,10 @@ function ServiceCard({ service, index }) {
       </div>
       <h3 className="mt-6 font-serif text-3xl text-mocha">{service.name}</h3>
       <p className="mt-4 text-sm leading-7 text-ink/68">{service.description}</p>
+      <PricePreview service={service} />
       <a
         href={`/services/${service.slug}`}
-        className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-mocha transition group-hover:text-bronze"
+        className="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold text-mocha transition group-hover:text-bronze"
       >
         View Treatment
         <ArrowRight size={15} />
@@ -556,7 +621,7 @@ function HomePage() {
               >
                 {[
                   ['Skin-first luxury', 'Premium facials, laser, and advanced skin rituals'],
-                  ['Personalized approach', 'Consultative, feminine, and carefully tailored'],
+                  ['Personalized approach', 'Consultative, Unisex, and carefully tailored'],
                   ['Sandton studio', 'A calm modern space with soft, elevated comfort']
                 ].map(([title, copy]) => (
                   <div key={title} className="rounded-[1.5rem] bg-ivory/80 p-4">
@@ -659,7 +724,7 @@ function HomePage() {
                 <p>
                   Every treatment journey begins with understanding your goals, your skin, and
                   the experience you want to have. The result is a studio visit that feels
-                  elevated, feminine, and deeply attentive.
+                  elevated, Unisex, and deeply attentive.
                 </p>
               </div>
               <div className="mt-8 flex flex-wrap gap-4">
@@ -748,6 +813,16 @@ function HomePage() {
                         </p>
                         <h3 className="mt-3 font-serif text-4xl text-mocha">{item.name}</h3>
                         <p className="mt-4 text-sm leading-7 text-ink/68">{item.overview}</p>
+                        {item.startingPrice ? (
+                          <div className="mt-6 inline-flex items-center gap-3 rounded-full border border-bronze/10 bg-white/82 px-4 py-2 shadow-soft">
+                            <span className="text-[0.64rem] font-semibold uppercase tracking-[0.3em] text-bronze/75">
+                              From
+                            </span>
+                            <span className="font-serif text-xl font-semibold text-mocha">
+                              {item.startingPrice}
+                            </span>
+                          </div>
+                        ) : null}
                       </div>
                       <a
                         href={`/services/${item.slug}`}
@@ -1056,6 +1131,7 @@ function ServiceDetailPage({ service }) {
                 </p>
                 <p className="mt-4 text-base leading-8 text-ink/72">{service.journey}</p>
               </div>
+              <PriceMenu service={service} />
             </div>
 
             <div className="grid gap-6">

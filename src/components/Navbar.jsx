@@ -28,8 +28,8 @@ export function Navbar() {
           : 'bg-transparent'
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8 lg:px-10">
-        <a href="/" className="flex items-center gap-3">
+      <nav className="mx-auto grid max-w-7xl grid-cols-[1fr_auto] items-center gap-4 px-5 py-4 sm:px-8 lg:grid-cols-[1fr_auto_1fr] lg:px-10">
+        <a href="/" className="flex items-center gap-3 justify-self-start">
           <div className="rounded-[1.5rem] border border-bronze/10 bg-white/88 p-2 shadow-soft">
             <img
               src="/leubelle-logo.png"
@@ -47,7 +47,7 @@ export function Navbar() {
           </div>
         </a>
 
-        <div className="hidden items-center gap-8 lg:flex">
+        <div className="hidden items-center justify-center gap-8 lg:flex">
           {links.map((link) => (
             <a
               key={link.href}
@@ -57,17 +57,18 @@ export function Navbar() {
               {link.label}
             </a>
           ))}
-          <a
-            href="https://booksy.com/en-za/43159_leubelle-beauty-aesthetics_skin-care_54464_strathavon?do=invite&_branch_match_id=1573995465181752854&utm_medium=profile_share_from_profile&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXT07J0UvKz88urtRLzs%2FVD%2FAoskwM8iwzMUiyrytKTUstKsrMS49PKsovL04tsnXLBIrlVwAAN98KkT0AAAA%3D"
-            className="rounded-full bg-mocha px-6 py-3 text-sm font-semibold text-white transition hover:bg-bronze"
-          >
-            Book On Booksy
-          </a>
         </div>
+
+        <a
+          href="https://booksy.com/en-za/43159_leubelle-beauty-aesthetics_skin-care_54464_strathavon?do=invite&_branch_match_id=1573995465181752854&utm_medium=profile_share_from_profile&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXT07J0UvKz88urtRLzs%2FVD%2FAoskwM8iwzMUiyrytKTUstKsrMS49PKsovL04tsnXLBIrlVwAAN98KkT0AAAA%3D"
+          className="hidden justify-self-end rounded-full bg-mocha px-6 py-3 text-sm font-semibold text-white transition hover:bg-bronze lg:inline-flex"
+        >
+          Book On Booksy
+        </a>
 
         <button
           type="button"
-          className="rounded-full border border-mocha/15 bg-white/80 p-3 text-mocha lg:hidden"
+          className="justify-self-end rounded-full border border-mocha/15 bg-white/80 p-3 text-mocha lg:hidden"
           onClick={() => setOpen((value) => !value)}
           aria-label="Toggle navigation"
         >
