@@ -21,7 +21,7 @@ const BOOKSY_URL =
 
 const floatingPhotos = [
   {
-    src: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80',
+    src: '/assets/leubelle-reception.jpg',
     className:
       'left-[-1.4rem] top-[8rem] h-24 w-20 sm:left-[-0.8rem] sm:top-[8.5rem] sm:h-32 sm:w-24 md:left-[-1.4rem] md:top-[9.5rem] md:h-40 md:w-32 lg:left-[-2rem] lg:top-[10rem] lg:h-52 lg:w-40',
     imageClassName: 'opacity-38 sm:opacity-48 md:opacity-58',
@@ -32,7 +32,7 @@ const floatingPhotos = [
     driftY: 16
   },
   {
-    src: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=80',
+    src: '/assets/leubelle-storefront.jpg',
     className:
       'left-[4%] top-[17rem] h-24 w-20 sm:left-[6%] sm:top-[19rem] sm:h-32 sm:w-24 md:left-[4%] md:top-[22rem] md:h-40 md:w-32 lg:left-[6%] lg:top-[26rem] lg:h-52 lg:w-40',
     imageClassName: 'opacity-34 sm:opacity-44 md:opacity-55',
@@ -43,7 +43,7 @@ const floatingPhotos = [
     driftY: 14
   },
   {
-    src: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=900&q=80',
+    src: '/assets/leubelle-treatment-room.jpg',
     className:
       'right-[-1rem] top-[6rem] h-24 w-20 sm:right-[1%] sm:top-[7rem] sm:h-32 sm:w-24 md:right-[2%] md:top-[8rem] md:h-40 md:w-32 lg:right-[5%] lg:top-[8rem] lg:h-52 lg:w-40',
     imageClassName: 'opacity-34 sm:opacity-44 md:opacity-55',
@@ -54,7 +54,7 @@ const floatingPhotos = [
     driftY: 18
   },
   {
-    src: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=900&q=80',
+    src: '/assets/leubelle-led-treatment.png',
     className:
       'right-[2%] top-[18rem] h-24 w-20 sm:right-[5%] sm:top-[21rem] sm:h-32 sm:w-24 md:right-[3%] md:top-[24rem] md:h-40 md:w-32 lg:right-[10%] lg:top-[28rem] lg:h-52 lg:w-40',
     imageClassName: 'opacity-32 sm:opacity-42 md:opacity-54',
@@ -65,7 +65,7 @@ const floatingPhotos = [
     driftY: 15
   },
   {
-    src: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=80',
+    src: '/assets/leubelle-storefront.jpg',
     className:
       'left-[38%] top-[4.5rem] h-24 w-20 sm:left-[42%] sm:top-[4.5rem] sm:h-32 sm:w-24 md:left-[44%] md:top-[5.5rem] md:h-40 md:w-32 lg:left-[46%] lg:top-[6rem] lg:h-52 lg:w-40',
     imageClassName: 'opacity-24 sm:opacity-30 md:opacity-42',
@@ -455,7 +455,8 @@ function PriceMenu({ service }) {
         ))}
       </div>
       <p className="relative z-10 mt-5 text-xs leading-6 text-ink/50">
-        Rand prices may be confirmed during consultation. Consultation items are quoted after skin assessment.
+        {service.pricingNote ||
+          'Rand prices may be confirmed during consultation. Consultation items are quoted after skin assessment.'}
       </p>
     </div>
   );
@@ -647,8 +648,8 @@ function HomePage() {
                 <div className="grid gap-4 sm:grid-cols-[1fr_0.78fr]">
                   <div className="relative min-h-[28rem] overflow-hidden rounded-[2rem]">
                     <img
-                      src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=80"
-                      alt="Luxury skincare treatment"
+                      src="/assets/leubelle-storefront.jpg"
+                      alt="Leubelle Beauty & Aesthetics studio storefront"
                       className="h-full w-full object-cover object-center"
                     />
                     <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/60 to-transparent p-6 text-white">
@@ -672,8 +673,8 @@ function HomePage() {
                     </div>
                     <div className="overflow-hidden rounded-[2rem]">
                       <img
-                        src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=80"
-                        alt="Beauty portrait"
+                        src="/assets/leubelle-reception.jpg"
+                        alt="Leubelle reception welcome area"
                         className="h-52 w-full object-cover"
                       />
                     </div>
@@ -702,8 +703,8 @@ function HomePage() {
               <ArchShape className="absolute inset-x-8 top-5 h-[82%]" />
               <div className="absolute -left-14 top-12 h-36 w-36 rounded-full bg-white/60 blur-2xl" />
               <img
-                src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1200&q=80"
-                alt="Leubelle consultation"
+                src="/assets/leubelle-treatment-room.jpg"
+                alt="Leubelle treatment room"
                 className="relative h-[34rem] w-full rounded-[2rem] object-cover"
               />
             </div>
@@ -861,6 +862,21 @@ function HomePage() {
               </div>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
+              <div className="relative min-h-80 overflow-hidden rounded-[2rem] border border-white/70 bg-white shadow-luxe sm:col-span-2">
+                <img
+                  src="/assets/leubelle-led-treatment.png"
+                  alt="Leubelle LED treatment experience"
+                  className="h-full min-h-80 w-full object-cover object-center"
+                />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/70 to-transparent p-6 text-white">
+                  <p className="font-brand text-xs uppercase tracking-[0.35em] text-white/80">
+                    Real Treatment Moment
+                  </p>
+                  <p className="mt-2 font-serif text-3xl leading-tight">
+                    A calm studio setting built around comfort and visible care.
+                  </p>
+                </div>
+              </div>
               {[
                 ['Refined glow', 'Fresh, polished-looking skin with a luxurious finish'],
                 ['Comfort-first care', 'A soothing studio atmosphere with attentive guidance'],
@@ -919,7 +935,7 @@ function HomePage() {
           <div className="relative overflow-hidden rounded-[2.8rem] bg-mocha px-7 py-12 text-white shadow-luxe sm:px-10 lg:px-14">
             <div className="absolute -right-20 -top-20 h-60 w-60 rounded-full bg-white/10 blur-3xl" />
             <div className="absolute -bottom-20 left-8 h-48 w-48 rounded-full bg-bronze/30 blur-3xl" />
-            <div className="relative z-10 grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="relative z-10 grid gap-8 lg:grid-cols-[0.96fr_0.88fr] lg:items-center">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/70">
                   Booking Invitation
@@ -935,26 +951,48 @@ function HomePage() {
                   WhatsApp message for guidance on the right service.
                 </p>
                 <p className="mt-4 text-sm text-white/60">Secure online booking via Booksy.</p>
+                <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+                  <a
+                    href={BOOKSY_URL}
+                    className="rounded-full bg-white px-7 py-4 text-center text-sm font-semibold text-mocha transition hover:bg-sand"
+                  >
+                    Book On Booksy
+                  </a>
+                  <a
+                    href="https://wa.me/27820826761"
+                    className="rounded-full border border-white/20 px-7 py-4 text-center text-sm font-semibold text-white transition hover:bg-white/10"
+                  >
+                    WhatsApp Inquiry
+                  </a>
+                  <a
+                    href="tel:+27820826761"
+                    className="rounded-full border border-white/20 px-7 py-4 text-center text-sm font-semibold text-white transition hover:bg-white/10"
+                  >
+                    Call Now
+                  </a>
+                </div>
               </div>
-              <div className="flex flex-col gap-4">
-                <a
-                  href={BOOKSY_URL}
-                  className="rounded-full bg-white px-7 py-4 text-center text-sm font-semibold text-mocha transition hover:bg-sand"
-                >
-                  Book On Booksy
-                </a>
-                <a
-                  href="https://wa.me/27820826761"
-                  className="rounded-full border border-white/20 px-7 py-4 text-center text-sm font-semibold text-white transition hover:bg-white/10"
-                >
-                  WhatsApp Inquiry
-                </a>
-                <a
-                  href="tel:+27820826761"
-                  className="rounded-full border border-white/20 px-7 py-4 text-center text-sm font-semibold text-white transition hover:bg-white/10"
-                >
-                  Call Now
-                </a>
+              <div className="overflow-hidden rounded-[2rem] border border-white/15 bg-white/10 p-3 shadow-luxe">
+                <div className="relative overflow-hidden rounded-[1.55rem]">
+                  <video
+                    className="aspect-[4/5] w-full object-cover"
+                    src="/assets/leubelle-client-session.mp4"
+                    poster="/assets/leubelle-led-treatment.png"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    controls
+                  />
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/75 to-transparent p-5">
+                    <p className="font-brand text-xs uppercase tracking-[0.32em] text-white/75">
+                      Client Session
+                    </p>
+                    <p className="mt-2 font-serif text-2xl leading-tight text-white">
+                      From booking to a calm Leubelle treatment moment.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
