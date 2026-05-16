@@ -5,7 +5,7 @@ export const services = [
     category: 'Laser Treatment',
     description:
       'A tailored laser treatment designed for smoother skin, everyday ease, and polished confidence.',
-    heroImage: '/assets/leubelle-permanent-hair-removal.jpg',
+    heroImage: '/assets/leubelle-laser-hair-removal.jpg',
     overview:
       'Our laser hair removal treatment is designed for clients who want a refined alternative to constant shaving or waxing. Each appointment is approached with attention to comfort, skin sensitivity, and the areas you want to treat.',
     idealFor: ['Face and body hair reduction', 'A smoother long-term maintenance routine', 'Clients who want a polished low-maintenance finish'],
@@ -69,20 +69,6 @@ export const services = [
       'Every acne-focused session starts with understanding your skin history, triggers, and current routine so the treatment plan feels informed and personal.',
     startingPrice: 'R 600.00',
     priceItems: [{ label: 'Acne Peel', price: 'R 600.00' }]
-  },
-  {
-    slug: 'wrinkle-treatment',
-    name: 'Wrinkle Treatment',
-    category: 'Age-Refining Care',
-    description:
-      'A refined treatment experience focused on smoother-looking skin and a fresh, elegant finish.',
-    heroImage: '/assets/leubelle-treatment-room.jpg',
-    overview:
-      'Wrinkle treatment at Leubelle is approached with subtlety and sophistication, helping clients invest in skin confidence through tailored aesthetic care.',
-    idealFor: ['Clients seeking a more refreshed appearance', 'Ongoing age-refining skincare plans', 'Treatments that feel polished and discreet'],
-    benefits: ['Supports smoother-looking skin', 'Encourages a refined finish', 'Pairs well with broader skin maintenance goals'],
-    journey:
-      'Your appointment includes a professional consultation and a treatment direction based on the outcome you want to achieve.'
   },
   {
     slug: 'scars-and-stretchmarks-treatment',
