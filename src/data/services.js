@@ -5,7 +5,7 @@ export const services = [
     category: 'Laser Treatment',
     description:
       'A tailored laser treatment designed for smoother skin, everyday ease, and polished confidence.',
-    heroImage: '/assets/leubelle-laser-hair-removal.jpg',
+    heroImage: '/assets/leubelle-permanent-hair-removal.jpg',
     overview:
       'Our laser hair removal treatment is designed for clients who want a refined alternative to constant shaving or waxing. Each appointment is approached with attention to comfort, skin sensitivity, and the areas you want to treat.',
     idealFor: ['Face and body hair reduction', 'A smoother long-term maintenance routine', 'Clients who want a polished low-maintenance finish'],
@@ -60,7 +60,7 @@ export const services = [
     category: 'Targeted Skin Concern',
     description:
       'Targeted professional care for breakout-prone skin with a gentle, confidence-building treatment approach.',
-    heroImage: '/assets/leubelle-treatment-room.jpg',
+    heroImage: '/assets/leubelle-acne-treatment.jpg',
     overview:
       'Our acne treatment options are designed to support clearer-looking skin while keeping your comfort and skin condition in mind. We focus on thoughtful care and realistic treatment planning.',
     idealFor: ['Breakout-prone skin', 'Congested skin needing professional support', 'Clients wanting a guided skin journey'],
@@ -151,7 +151,7 @@ export const services = [
     category: 'Facial Treatment',
     description:
       'A deeply refreshing facial experience that supports hydration, clarity, and that sought-after Leubelle glow.',
-    heroImage: '/assets/leubelle-hydrafacial-care.jpg',
+    heroImage: '/assets/leubelle-led-treatment.png',
     overview:
       'Hydrafacial is one of our signature skin-refreshing treatments, loved by clients who want their skin to feel cleaner, softer, and visibly revived.',
     idealFor: ['Dull or dehydrated skin', 'Special-event prep', 'Clients seeking an instantly refreshed finish'],
@@ -167,7 +167,7 @@ export const services = [
     category: 'Laser Facial',
     description:
       'A modern facial treatment designed to revive skin clarity while maintaining a refined and polished glow.',
-    heroImage: '/assets/leubelle-carbon-laser-facial.jpg',
+    heroImage: '/assets/leubelle-hollywood-facial.jpg',
     overview:
       'Our carbon laser facial offers a contemporary skin treatment option for clients who want a fresher, cleaner-looking complexion in a premium setting.',
     idealFor: ['Clients wanting a clarified complexion', 'A polished modern skin refresh', 'Luxury facial care with advanced appeal'],
